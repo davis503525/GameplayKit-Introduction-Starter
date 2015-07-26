@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8118" systemVersion="15A172" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="15A226f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8098"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="GameplayKit_Introduction" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
@@ -15,11 +15,127 @@
                     <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcl-7i-mHu">
+                                <rect key="frame" x="56" y="456" width="40" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5Y3-Dy-Cd6"/>
+                                    <constraint firstAttribute="width" constant="40" id="gWF-eD-gTw"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Up Arrow"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="beginMovement:" destination="BV1-FR-VrT" eventType="touchDown" id="mum-1F-FtX"/>
+                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="ZnU-eP-5jg"/>
+                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpInside" id="ejw-gs-y5g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1b-OZ-8yq">
+                                <rect key="frame" x="104" y="504" width="40" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="5WT-F0-ue7"/>
+                                    <constraint firstAttribute="height" constant="40" id="kKh-Dw-D91"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Right Arrow"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="beginMovement:" destination="BV1-FR-VrT" eventType="touchDown" id="imc-we-uPl"/>
+                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="R6H-po-6t4"/>
+                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpInside" id="rVK-ji-s9d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLG-yS-PLT">
+                                <rect key="frame" x="8" y="504" width="40" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="HPh-uf-wpi"/>
+                                    <constraint firstAttribute="height" constant="40" id="TRG-k9-9Ov"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Left Arrow"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="beginMovement:" destination="BV1-FR-VrT" eventType="touchDown" id="wRm-VB-elZ"/>
+                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Sl3-F4-Fok"/>
+                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="hdp-Ts-cvG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMu-jS-y2p">
+                                <rect key="frame" x="56" y="552" width="40" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JY5-nY-foY"/>
+                                    <constraint firstAttribute="width" constant="40" id="bRi-wz-vi0"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Down Arrow"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="beginMovement:" destination="BV1-FR-VrT" eventType="touchDown" id="BYJ-6S-JBw"/>
+                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpInside" id="rbg-fR-Ccx"/>
+                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="z2G-0Y-687"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jp-cx-emj">
+                                <rect key="frame" x="220" y="556" width="160" height="40"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="XzO-3e-OkK"/>
+                                    <constraint firstAttribute="height" constant="40" id="gEh-R3-tRT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="SMu-jS-y2p" secondAttribute="bottom" constant="8" id="5iK-WR-Rtw"/>
+                            <constraint firstItem="aLG-yS-PLT" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="8" id="816-ra-umu"/>
+                            <constraint firstItem="6Jp-cx-emj" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="AP8-ji-UhM"/>
+                            <constraint firstItem="SMu-jS-y2p" firstAttribute="top" secondItem="Xcl-7i-mHu" secondAttribute="bottom" constant="56" id="MwA-pC-FMM"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="aLG-yS-PLT" secondAttribute="bottom" constant="56" id="Shb-Pl-Szf"/>
+                            <constraint firstItem="j1b-OZ-8yq" firstAttribute="leading" secondItem="aLG-yS-PLT" secondAttribute="trailing" constant="56" id="Vmy-yu-H8O"/>
+                            <constraint firstItem="SMu-jS-y2p" firstAttribute="centerX" secondItem="Xcl-7i-mHu" secondAttribute="centerX" id="XKm-Fz-jEv"/>
+                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="6Jp-cx-emj" secondAttribute="bottom" constant="4" id="Xxd-Iu-38r"/>
+                            <constraint firstItem="j1b-OZ-8yq" firstAttribute="centerY" secondItem="aLG-yS-PLT" secondAttribute="centerY" id="cf7-pw-yMY"/>
+                            <constraint firstItem="SMu-jS-y2p" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="56" id="i5u-AC-8yI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="6Jp-cx-emj" id="6Dx-io-Zbn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="575" y="492"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Down Arrow" width="40" height="40"/>
+        <image name="Left Arrow" width="40" height="40"/>
+        <image name="Right Arrow" width="40" height="40"/>
+        <image name="Up Arrow" width="40" height="40"/>
+    </resources>
 </document>
