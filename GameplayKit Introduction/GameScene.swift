@@ -90,8 +90,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         else if contact is RedEnemyNode {
             NSNotificationCenter.defaultCenter().postNotificationName("updateScore", object: self, userInfo: ["score": -2])
         }
-        else { // contact is YellowEnemyNode
-            
+        else if contact is YellowEnemyNode {
+            self.playerNode.enabled = false
         }
         
         contact.removeFromParent()
@@ -144,7 +144,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func moveUp() {
         let action = SKAction.moveByX(0, y: 10, duration: 0.0)
-        self.playerNode.runAction(action)
+        if self.playerNode.enabled {
+            self.playerNode.runAction(action)
+        }
     }
     
     func startMoveRight() {
@@ -158,7 +160,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func moveRight() {
         let action = SKAction.moveByX(10, y: 0, duration: 0.0)
-        self.playerNode.runAction(action)
+        if self.playerNode.enabled {
+            self.playerNode.runAction(action)
+        }
     }
     
     func startMoveDown() {
@@ -172,7 +176,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func moveDown() {
         let action = SKAction.moveByX(0, y: -10, duration: 1.0/60.0)
-        self.playerNode.runAction(action)
+        if self.playerNode.enabled {
+            self.playerNode.runAction(action)
+        }
     }
     
     func startMoveLeft() {
@@ -186,6 +192,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func moveLeft() {
         let action = SKAction.moveByX(-10, y: 0, duration: 1.0/60.0)
-        self.playerNode.runAction(action)
+        if self.playerNode.enabled {
+            self.playerNode.runAction(action)
+        }
     }
 }
