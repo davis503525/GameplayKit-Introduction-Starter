@@ -47,7 +47,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.downDisplayTimer = NSTimer(timeInterval: 1.0/60.0, target: self, selector: "moveDown", userInfo: nil, repeats: true)
         self.leftDisplayTimer = NSTimer(timeInterval: 1.0/60.0, target: self, selector: "moveLeft", userInfo: nil, repeats: true)
         
-        self.respawnTimer = NSTimer(timeInterval: 1.0/60.0, target: self, selector: "respawn", userInfo: nil, repeats: true)
+        self.respawnTimer = NSTimer(timeInterval: 1.0, target: self, selector: "respawn", userInfo: nil, repeats: true)
         NSRunLoop.mainRunLoop().addTimer(self.respawnTimer, forMode: NSRunLoopCommonModes)
         
         self.camera = cameraNode
