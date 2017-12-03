@@ -16,12 +16,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let playerNode = PlayerNode(circleOfRadius: 50)
     
-    var upDisplayTimer: NSTimer!
-    var rightDisplayTimer: NSTimer!
-    var downDisplayTimer: NSTimer!
-    var leftDisplayTimer: NSTimer!
+    var upDisplayTimer: Timer!
+    var rightDisplayTimer: Timer!
+    var downDisplayTimer: Timer!
+    var leftDisplayTimer: Timer!
     
-    var respawnTimer: NSTimer!
+    var respawnTimer: Timer!
     
     let spawnPoints = [
         CGPoint(x: 245, y: 3900),
@@ -36,26 +36,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         CGPoint(x: 3000, y: 2400),
     ]
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Scene setup */
         self.addChild(worldNode)
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         self.physicsWorld.contactDelegate = self
-        
-        self.upDisplayTimer = NSTimer(timeInterval: 1.0/60.0, target: self, selector: "moveUp", userInfo: nil, repeats: true)
-        self.rightDisplayTimer = NSTimer(timeInterval: 1.0/60.0, target: self, selector: "moveRight", userInfo: nil, repeats: true)
-        self.downDisplayTimer = NSTimer(timeInterval: 1.0/60.0, target: self, selector: "moveDown", userInfo: nil, repeats: true)
-        self.leftDisplayTimer = NSTimer(timeInterval: 1.0/60.0, target: self, selector: "moveLeft", userInfo: nil, repeats: true)
-        
-        self.respawnTimer = NSTimer(timeInterval: 1.0, target: self, selector: "respawn", userInfo: nil, repeats: true)
-        NSRunLoop.mainRunLoop().addTimer(self.respawnTimer, forMode: NSRunLoopCommonModes)
+
+        let moveUpSelector = #selector(moveUp)
+        self.upDisplayTimer = Timer(timeInterval: 1.0/60.0, target: self, selector: moveUpSelector, userInfo: nil, repeats: true)
+        let moveRightSelector = #selector(moveRight)
+        self.rightDisplayTimer = Timer(timeInterval: 1.0/60.0, target: self, selector: moveRightSelector, userInfo: nil, repeats: true)
+        let moveDownSelector = #selector(moveDown)
+        self.downDisplayTimer = Timer(timeInterval: 1.0/60.0, target: self, selector: moveDownSelector, userInfo: nil, repeats: true)
+        let moveLeftSelector = #selector(moveLeft)
+        self.leftDisplayTimer = Timer(timeInterval: 1.0/60.0, target: self, selector: moveLeftSelector, userInfo: nil, repeats: true)
+
+        let respawnSelector = #selector(respawn)
+        self.respawnTimer = Timer(timeInterval: 1.0, target: self, selector: respawnSelector, userInfo: nil, repeats: true)
+        RunLoop.main.add(self.respawnTimer, forMode: RunLoopMode.commonModes)
         
         self.camera = cameraNode
         self.camera?.position = CGPoint(x: 2048, y: 2048)
         self.camera?.setScale(1.0)
         
         playerNode.position = CGPoint(x: 2048, y: 2048)
-        playerNode.fillColor = UIColor.blueColor()
+        playerNode.fillColor = UIColor.blue
         playerNode.lineWidth = 0.0
         
         let playerBody = SKPhysicsBody(circleOfRadius: 50)
@@ -66,30 +71,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.initialSpawn()
     }
    
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         self.camera?.position = playerNode.position
     }
     
-    //  MARK: Physics Delegate
-    func didBeginContact(contact: SKPhysicsContact) {
+    //  MARK: - Physics Delegate
+
+    func didBegin(_ contact: SKPhysicsContact) {
         let nodeA = contact.bodyA.node
         let nodeB = contact.bodyB.node
-        
-        if let contact = nodeA as? ContactNode where nodeB! is PlayerNode {
-            self.handleContactWithNode(contact)
+
+        if let contact = nodeA as? ContactNode, nodeB! is PlayerNode {
+            self.handleContactWithNode(contact: contact)
         }
-        else if let contact = nodeB as? ContactNode where nodeA! is PlayerNode {
-            self.handleContactWithNode(contact)
+        else if let contact = nodeB as? ContactNode, nodeA! is PlayerNode {
+            self.handleContactWithNode(contact: contact)
         }
     }
     
     func handleContactWithNode(contact: ContactNode) {
         if contact is PointsNode {
-            NSNotificationCenter.defaultCenter().postNotificationName("updateScore", object: self, userInfo: ["score": 1])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateScore"), object: self, userInfo: ["Score": 1])
         }
         else if contact is RedEnemyNode {
-            NSNotificationCenter.defaultCenter().postNotificationName("updateScore", object: self, userInfo: ["score": -2])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateScore"), object: self, userInfo: ["score": -2])
         }
         else if contact is YellowEnemyNode {
             self.playerNode.enabled = false
@@ -98,103 +104,110 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         contact.removeFromParent()
     }
     
-    //  MARK: Respawning Behaviour
+    //  MARK: - Respawning Behaviour
     func initialSpawn() {
         for point in self.spawnPoints {
             let respawnFactor = arc4random() % 3  //  Will produce a value between 0 and 2 (inclusive)
             
-            var node: SKShapeNode? = nil
-            
+            let node: SKShapeNode
+
             switch respawnFactor {
             case 0:
                 node = PointsNode(circleOfRadius: 25)
-                node!.physicsBody = SKPhysicsBody(circleOfRadius: 25)
-                node!.fillColor = UIColor.greenColor()
+                node.physicsBody = SKPhysicsBody(circleOfRadius: 25)
+                node.fillColor = UIColor.green
             case 1:
                 node = RedEnemyNode(circleOfRadius: 75)
-                node!.physicsBody = SKPhysicsBody(circleOfRadius: 75)
-                node!.fillColor = UIColor.redColor()
+                node.physicsBody = SKPhysicsBody(circleOfRadius: 75)
+                node.fillColor = UIColor.red
             case 2:
                 node = YellowEnemyNode(circleOfRadius: 50)
-                node!.physicsBody = SKPhysicsBody(circleOfRadius: 50)
-                node!.fillColor = UIColor.yellowColor()
+                node.physicsBody = SKPhysicsBody(circleOfRadius: 50)
+                node.fillColor = UIColor.yellow
             default:
+                node = SKShapeNode()
                 break
             }
-            
-            node!.position = point
-            node!.strokeColor = UIColor.clearColor()
-            node!.physicsBody!.contactTestBitMask = 1
-            self.addChild(node!)
+
+            if (node.self === SKShapeNode.self) != true {
+                node.position = point
+                node.strokeColor = UIColor.clear
+                node.physicsBody!.contactTestBitMask = 1
+                self.addChild(node)
+            }
         }
     }
     
-    func respawn() {
+    @objc func respawn() {
         
     }
     
-    //  MARK: Movement Methods
+    //  MARK: - Movement Methods
     func startMoveUp() {
-        NSRunLoop.mainRunLoop().addTimer(self.upDisplayTimer, forMode: NSRunLoopCommonModes)
+        RunLoop.main.add(self.upDisplayTimer, forMode: RunLoopMode.commonModes)
     }
     
     func endMoveUp() {
         self.upDisplayTimer.invalidate()
-        self.upDisplayTimer = NSTimer(timeInterval: 1.0/60.0, target: self, selector: "moveUp", userInfo: nil, repeats: true)
+        let selector = #selector(moveUp)
+        self.upDisplayTimer = Timer(timeInterval: 1.0/60.0, target: self, selector: selector, userInfo: nil, repeats: true)
     }
     
-    func moveUp() {
-        let action = SKAction.moveByX(0, y: 10, duration: 0.0)
+    @objc func moveUp() {
+        let action = SKAction.moveBy(x: 0, y: 10, duration: 0.0)
         if self.playerNode.enabled {
-            self.playerNode.runAction(action)
+            self.playerNode.run(action)
         }
     }
     
     func startMoveRight() {
-        NSRunLoop.mainRunLoop().addTimer(self.rightDisplayTimer, forMode: NSRunLoopCommonModes)
+        RunLoop.main.add(self.rightDisplayTimer, forMode: RunLoopMode.commonModes)
     }
     
     func endMoveRight() {
         self.rightDisplayTimer.invalidate()
-        self.rightDisplayTimer = NSTimer(timeInterval: 1.0/60.0, target: self, selector: "moveRight", userInfo: nil, repeats: true)
+        let selector = #selector(moveRight)
+        self.rightDisplayTimer = Timer(timeInterval: 1.0/60.0, target: self, selector: selector, userInfo: nil, repeats: true)
     }
     
-    func moveRight() {
-        let action = SKAction.moveByX(10, y: 0, duration: 0.0)
+    @objc func moveRight() {
+        let action = SKAction.moveBy(x: 10, y: 0, duration: 0.0)
         if self.playerNode.enabled {
-            self.playerNode.runAction(action)
+            self.playerNode.run(action)
         }
     }
     
     func startMoveDown() {
-        NSRunLoop.mainRunLoop().addTimer(self.downDisplayTimer, forMode: NSRunLoopCommonModes)
+        RunLoop.main.add(self.downDisplayTimer, forMode: RunLoopMode.commonModes)
     }
     
     func endMoveDown() {
         self.downDisplayTimer.invalidate()
-        self.downDisplayTimer = NSTimer(timeInterval: 1.0/60.0, target: self, selector: "moveDown", userInfo: nil, repeats: true)
+        let selector = #selector(moveDown)
+        self.downDisplayTimer = Timer(timeInterval: 1.0/60.0, target: self, selector: selector, userInfo: nil, repeats: true)
     }
     
-    func moveDown() {
-        let action = SKAction.moveByX(0, y: -10, duration: 1.0/60.0)
+    @objc func moveDown() {
+        let action = SKAction.moveBy(x: 0, y: -10, duration: 1.0/60.0)
         if self.playerNode.enabled {
-            self.playerNode.runAction(action)
+            self.playerNode.run(action)
         }
     }
     
     func startMoveLeft() {
-        NSRunLoop.mainRunLoop().addTimer(self.leftDisplayTimer, forMode: NSRunLoopCommonModes)
+        RunLoop.main.add(self.leftDisplayTimer, forMode: RunLoopMode.commonModes)
     }
     
     func endMoveLeft() {
         self.leftDisplayTimer.invalidate()
-        self.leftDisplayTimer = NSTimer(timeInterval: 1.0/60.0, target: self, selector: "moveLeft", userInfo: nil, repeats: true)
+        let selector = #selector(moveLeft)
+        self.leftDisplayTimer = Timer(timeInterval: 1.0/60.0, target: self, selector: selector, userInfo: nil, repeats: true)
     }
     
-    func moveLeft() {
-        let action = SKAction.moveByX(-10, y: 0, duration: 1.0/60.0)
+    @objc func moveLeft() {
+        let action = SKAction.moveBy(x: -10, y: 0, duration: 1.0/60.0)
         if self.playerNode.enabled {
-            self.playerNode.runAction(action)
+            self.playerNode.run(action)
         }
     }
 }

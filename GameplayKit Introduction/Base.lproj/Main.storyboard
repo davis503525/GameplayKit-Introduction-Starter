@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="15A226f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
@@ -13,13 +18,12 @@
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcl-7i-mHu">
-                                <rect key="frame" x="56" y="456" width="40" height="40"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="56" y="634" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5Y3-Dy-Cd6"/>
                                     <constraint firstAttribute="width" constant="40" id="gWF-eD-gTw"/>
@@ -31,15 +35,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="beginMovement:" destination="BV1-FR-VrT" eventType="touchDown" id="mum-1F-FtX"/>
-                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="ZnU-eP-5jg"/>
-                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpInside" id="ejw-gs-y5g"/>
+                                    <action selector="beginMovementWithSender:" destination="BV1-FR-VrT" eventType="touchDown" id="wAd-fV-YWn"/>
+                                    <action selector="endMovementWithSender:" destination="BV1-FR-VrT" eventType="touchUpInside" id="bMF-Rd-DaE"/>
+                                    <action selector="endMovementWithSender:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="h14-WW-qcs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1b-OZ-8yq">
-                                <rect key="frame" x="104" y="504" width="40" height="40"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="104" y="682" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="5WT-F0-ue7"/>
                                     <constraint firstAttribute="height" constant="40" id="kKh-Dw-D91"/>
@@ -51,15 +54,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="beginMovement:" destination="BV1-FR-VrT" eventType="touchDown" id="imc-we-uPl"/>
-                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="R6H-po-6t4"/>
-                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpInside" id="rVK-ji-s9d"/>
+                                    <action selector="beginMovementWithSender:" destination="BV1-FR-VrT" eventType="touchDown" id="zv3-ax-G8m"/>
+                                    <action selector="endMovementWithSender:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="8qI-6f-6zI"/>
+                                    <action selector="endMovementWithSender:" destination="BV1-FR-VrT" eventType="touchUpInside" id="YX3-jd-4gh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLG-yS-PLT">
-                                <rect key="frame" x="8" y="504" width="40" height="40"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="8" y="682" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="HPh-uf-wpi"/>
                                     <constraint firstAttribute="height" constant="40" id="TRG-k9-9Ov"/>
@@ -71,15 +73,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="beginMovement:" destination="BV1-FR-VrT" eventType="touchDown" id="wRm-VB-elZ"/>
-                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Sl3-F4-Fok"/>
-                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="hdp-Ts-cvG"/>
+                                    <action selector="beginMovementWithSender:" destination="BV1-FR-VrT" eventType="touchDown" id="nrf-HD-VHA"/>
+                                    <action selector="endMovementWithSender:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Kuf-kS-717"/>
+                                    <action selector="endMovementWithSender:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="PI3-oR-yIY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMu-jS-y2p">
-                                <rect key="frame" x="56" y="552" width="40" height="40"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="56" y="730" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JY5-nY-foY"/>
                                     <constraint firstAttribute="width" constant="40" id="bRi-wz-vi0"/>
@@ -91,25 +92,22 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="beginMovement:" destination="BV1-FR-VrT" eventType="touchDown" id="BYJ-6S-JBw"/>
-                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpInside" id="rbg-fR-Ccx"/>
-                                    <action selector="endMovement:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="z2G-0Y-687"/>
+                                    <action selector="beginMovementWithSender:" destination="BV1-FR-VrT" eventType="touchDown" id="iu7-iE-aO1"/>
+                                    <action selector="endMovementWithSender:" destination="BV1-FR-VrT" eventType="touchUpInside" id="UeG-A7-GUG"/>
+                                    <action selector="endMovementWithSender:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="Upe-bZ-9VW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jp-cx-emj">
-                                <rect key="frame" x="220" y="556" width="160" height="40"/>
-                                <animations/>
+                                <rect key="frame" x="134" y="734" width="107.66666666666669" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="XzO-3e-OkK"/>
                                     <constraint firstAttribute="height" constant="40" id="gEh-R3-tRT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="SMu-jS-y2p" secondAttribute="bottom" constant="8" id="5iK-WR-Rtw"/>
                             <constraint firstItem="aLG-yS-PLT" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="8" id="816-ra-umu"/>

@@ -9,7 +9,15 @@
 import UIKit
 
 class RedEnemyNode: ContactNode {
-    
-    var entity = RedEnemy()
+
+    override init() {
+        super.init()
+        entity = RedEnemy()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        entity = RedEnemy()
+    }
 
 }
