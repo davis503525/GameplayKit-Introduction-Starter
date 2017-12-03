@@ -9,7 +9,15 @@
 import UIKit
 
 class YellowEnemyNode: ContactNode {
-    
-    var entity = YellowEnemy()
+
+    override init() {
+        super.init()
+        entity = YellowEnemy()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        entity = YellowEnemy()
+    }
 
 }

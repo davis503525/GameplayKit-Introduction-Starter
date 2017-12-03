@@ -14,14 +14,14 @@
 		60679B5D1B5BADC1006D840E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60679B5B1B5BADC1006D840E /* Main.storyboard */; };
 		60679B5F1B5BADC1006D840E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60679B5E1B5BADC1006D840E /* Assets.xcassets */; };
 		60679B621B5BADC1006D840E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60679B601B5BADC1006D840E /* LaunchScreen.storyboard */; };
-		60679B6B1B5BB7A8006D840E /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60679B6A1B5BB7A8006D840E /* PlayerNode.swift */; };
-		606F3CAB1B64875D009A077B /* PointsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F3CAA1B64875D009A077B /* PointsNode.swift */; };
-		606F3CAD1B648785009A077B /* RedEnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F3CAC1B648785009A077B /* RedEnemyNode.swift */; };
-		606F3CAF1B648797009A077B /* YellowEnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F3CAE1B648797009A077B /* YellowEnemyNode.swift */; };
-		606F3CB21B6487C9009A077B /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F3CB11B6487C9009A077B /* Points.swift */; };
-		606F3CB41B6487D7009A077B /* RedEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F3CB31B6487D7009A077B /* RedEnemy.swift */; };
-		606F3CB71B6487EA009A077B /* YellowEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F3CB61B6487EA009A077B /* YellowEnemy.swift */; };
-		606F3CB91B649152009A077B /* ContactNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606F3CB81B649152009A077B /* ContactNode.swift */; };
+		FE638BD11FD36A1A00DA2787 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE638BCC1FD36A1A00DA2787 /* PlayerNode.swift */; };
+		FE638BD21FD36A1A00DA2787 /* PointsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE638BCD1FD36A1A00DA2787 /* PointsNode.swift */; };
+		FE638BD31FD36A1A00DA2787 /* ContactNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE638BCE1FD36A1A00DA2787 /* ContactNode.swift */; };
+		FE638BD41FD36A1A00DA2787 /* YellowEnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE638BCF1FD36A1A00DA2787 /* YellowEnemyNode.swift */; };
+		FE638BD51FD36A1A00DA2787 /* RedEnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE638BD01FD36A1A00DA2787 /* RedEnemyNode.swift */; };
+		FE638BDB1FD36A5D00DA2787 /* RedEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE638BD81FD36A5D00DA2787 /* RedEnemy.swift */; };
+		FE638BDC1FD36A5D00DA2787 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE638BD91FD36A5D00DA2787 /* Points.swift */; };
+		FE638BDD1FD36A5D00DA2787 /* YellowEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE638BDA1FD36A5D00DA2787 /* YellowEnemy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,14 +34,14 @@
 		60679B5E1B5BADC1006D840E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60679B611B5BADC1006D840E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60679B631B5BADC1006D840E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		60679B6A1B5BB7A8006D840E /* PlayerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
-		606F3CAA1B64875D009A077B /* PointsNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsNode.swift; sourceTree = "<group>"; };
-		606F3CAC1B648785009A077B /* RedEnemyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedEnemyNode.swift; sourceTree = "<group>"; };
-		606F3CAE1B648797009A077B /* YellowEnemyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowEnemyNode.swift; sourceTree = "<group>"; };
-		606F3CB11B6487C9009A077B /* Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
-		606F3CB31B6487D7009A077B /* RedEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedEnemy.swift; sourceTree = "<group>"; };
-		606F3CB61B6487EA009A077B /* YellowEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowEnemy.swift; sourceTree = "<group>"; };
-		606F3CB81B649152009A077B /* ContactNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactNode.swift; sourceTree = "<group>"; };
+		FE638BCC1FD36A1A00DA2787 /* PlayerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
+		FE638BCD1FD36A1A00DA2787 /* PointsNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsNode.swift; sourceTree = "<group>"; };
+		FE638BCE1FD36A1A00DA2787 /* ContactNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactNode.swift; sourceTree = "<group>"; };
+		FE638BCF1FD36A1A00DA2787 /* YellowEnemyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowEnemyNode.swift; sourceTree = "<group>"; };
+		FE638BD01FD36A1A00DA2787 /* RedEnemyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedEnemyNode.swift; sourceTree = "<group>"; };
+		FE638BD81FD36A5D00DA2787 /* RedEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedEnemy.swift; sourceTree = "<group>"; };
+		FE638BD91FD36A5D00DA2787 /* Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
+		FE638BDA1FD36A5D00DA2787 /* YellowEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowEnemy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,55 +75,55 @@
 			isa = PBXGroup;
 			children = (
 				60679B531B5BADC1006D840E /* AppDelegate.swift */,
-				60679B591B5BADC1006D840E /* GameViewController.swift */,
+				60679B5E1B5BADC1006D840E /* Assets.xcassets */,
+				FE638BDE1FD36A8F00DA2787 /* Components */,
+				FE638BD71FD36A5D00DA2787 /* Entities */,
 				60679B551B5BADC1006D840E /* GameScene.sks */,
 				60679B571B5BADC1006D840E /* GameScene.swift */,
-				606F3CA61B6486FC009A077B /* Nodes */,
-				606F3CA71B648701009A077B /* Entities */,
-				606F3CA81B648706009A077B /* Components */,
-				606F3CB01B6487A1009A077B /* State Machine */,
-				60679B5B1B5BADC1006D840E /* Main.storyboard */,
-				60679B5E1B5BADC1006D840E /* Assets.xcassets */,
-				60679B601B5BADC1006D840E /* LaunchScreen.storyboard */,
+				60679B591B5BADC1006D840E /* GameViewController.swift */,
 				60679B631B5BADC1006D840E /* Info.plist */,
+				60679B601B5BADC1006D840E /* LaunchScreen.storyboard */,
+				60679B5B1B5BADC1006D840E /* Main.storyboard */,
+				FE638BCB1FD36A1A00DA2787 /* Nodes */,
+				FE638BDF1FD36AA300DA2787 /* StateMachine */,
 			);
 			path = "GameplayKit Introduction";
 			sourceTree = "<group>";
 		};
-		606F3CA61B6486FC009A077B /* Nodes */ = {
+		FE638BCB1FD36A1A00DA2787 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				60679B6A1B5BB7A8006D840E /* PlayerNode.swift */,
-				606F3CB81B649152009A077B /* ContactNode.swift */,
-				606F3CAA1B64875D009A077B /* PointsNode.swift */,
-				606F3CAC1B648785009A077B /* RedEnemyNode.swift */,
-				606F3CAE1B648797009A077B /* YellowEnemyNode.swift */,
+				FE638BCE1FD36A1A00DA2787 /* ContactNode.swift */,
+				FE638BCC1FD36A1A00DA2787 /* PlayerNode.swift */,
+				FE638BCD1FD36A1A00DA2787 /* PointsNode.swift */,
+				FE638BD01FD36A1A00DA2787 /* RedEnemyNode.swift */,
+				FE638BCF1FD36A1A00DA2787 /* YellowEnemyNode.swift */,
 			);
-			name = Nodes;
+			path = Nodes;
 			sourceTree = "<group>";
 		};
-		606F3CA71B648701009A077B /* Entities */ = {
+		FE638BD71FD36A5D00DA2787 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				606F3CB11B6487C9009A077B /* Points.swift */,
-				606F3CB31B6487D7009A077B /* RedEnemy.swift */,
-				606F3CB61B6487EA009A077B /* YellowEnemy.swift */,
+				FE638BD91FD36A5D00DA2787 /* Points.swift */,
+				FE638BD81FD36A5D00DA2787 /* RedEnemy.swift */,
+				FE638BDA1FD36A5D00DA2787 /* YellowEnemy.swift */,
 			);
-			name = Entities;
+			path = Entities;
 			sourceTree = "<group>";
 		};
-		606F3CA81B648706009A077B /* Components */ = {
+		FE638BDE1FD36A8F00DA2787 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Components;
+			path = Components;
 			sourceTree = "<group>";
 		};
-		606F3CB01B6487A1009A077B /* State Machine */ = {
+		FE638BDF1FD36AA300DA2787 /* StateMachine */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "State Machine";
+			path = StateMachine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,11 +152,12 @@
 		60679B481B5BADC1006D840E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Davis Allie";
 				TargetAttributes = {
 					60679B4F1B5BADC1006D840E = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = SP86DZAJ6F;
 					};
 				};
 			};
@@ -197,17 +198,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				606F3CAD1B648785009A077B /* RedEnemyNode.swift in Sources */,
-				606F3CB41B6487D7009A077B /* RedEnemy.swift in Sources */,
-				606F3CB91B649152009A077B /* ContactNode.swift in Sources */,
-				606F3CAF1B648797009A077B /* YellowEnemyNode.swift in Sources */,
+				FE638BD11FD36A1A00DA2787 /* PlayerNode.swift in Sources */,
+				FE638BDD1FD36A5D00DA2787 /* YellowEnemy.swift in Sources */,
 				60679B581B5BADC1006D840E /* GameScene.swift in Sources */,
-				606F3CB71B6487EA009A077B /* YellowEnemy.swift in Sources */,
+				FE638BD21FD36A1A00DA2787 /* PointsNode.swift in Sources */,
 				60679B5A1B5BADC1006D840E /* GameViewController.swift in Sources */,
-				606F3CB21B6487C9009A077B /* Points.swift in Sources */,
-				60679B6B1B5BB7A8006D840E /* PlayerNode.swift in Sources */,
+				FE638BD31FD36A1A00DA2787 /* ContactNode.swift in Sources */,
+				FE638BDC1FD36A5D00DA2787 /* Points.swift in Sources */,
+				FE638BD51FD36A1A00DA2787 /* RedEnemyNode.swift in Sources */,
 				60679B541B5BADC1006D840E /* AppDelegate.swift in Sources */,
-				606F3CAB1B64875D009A077B /* PointsNode.swift in Sources */,
+				FE638BDB1FD36A5D00DA2787 /* RedEnemy.swift in Sources */,
+				FE638BD41FD36A1A00DA2787 /* YellowEnemyNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,13 +242,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -269,11 +278,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -286,13 +296,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -308,9 +326,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -320,10 +340,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SP86DZAJ6F;
 				INFOPLIST_FILE = "GameplayKit Introduction/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tutsplus.GameplayKit-Introduction";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -331,10 +353,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = SP86DZAJ6F;
 				INFOPLIST_FILE = "GameplayKit Introduction/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tutsplus.GameplayKit-Introduction";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

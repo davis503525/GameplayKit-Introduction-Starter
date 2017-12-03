@@ -17,13 +17,13 @@ class PlayerNode: SKShapeNode {
             if self.enabled == false {
                 self.alpha = 0.1
                 
-                self.runAction(SKAction.customActionWithDuration(2.0, actionBlock: { (node, elapsedTime) -> Void in
+                self.run(SKAction.customAction(withDuration: 2.0, actionBlock: { (node, elapsedTime) -> Void in
                     if elapsedTime == 2.0 {
                         self.enabled = true
                     }
                 }))
                 
-                self.runAction(SKAction.fadeInWithDuration(2.0))
+                self.run(SKAction.fadeIn(withDuration: 2.0))
             }
         }
     }

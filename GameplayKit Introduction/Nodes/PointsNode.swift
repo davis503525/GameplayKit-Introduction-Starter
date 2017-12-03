@@ -9,7 +9,15 @@
 import UIKit
 
 class PointsNode: ContactNode {
-    
-    var entity = Points()
-    
+
+    override init() {
+        super.init()
+        entity = Points()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        entity = Points()
+    }
+
 }
